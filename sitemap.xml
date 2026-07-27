@@ -16,6 +16,20 @@
   </url>
 
   <url>
+    <loc>https://peachprepre.com/guides.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://peachprepre.com/vocab.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://peachprepre.com/support.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
