@@ -231,6 +231,29 @@
     .term-name { font-size: 16px; font-weight: 900; color: #FFAE66; margin-bottom: 6px; }
     .term-def { font-size: 15px; color: rgba(255,255,255,0.70); line-height: 1.7; }
 
+    /* ── Related guide ── */
+    .related-guide {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .related-guide:hover { border-color: rgba(255,174,102,0.35); }
+    .related-guide-icon { font-size: 24px; flex-shrink: 0; }
+    .related-guide-label {
+      font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.30); margin-bottom: 4px;
+    }
+    .related-guide-title { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.80); }
+    .related-guide-arrow { margin-left: auto; font-size: 18px; color: #FFAE66; flex-shrink: 0; }
+
     /* ── CTA section ── */
     .cobb-cta {
       text-align: center;
@@ -643,6 +666,15 @@
       </div>
 
     </div>
+
+    <a class="related-guide" href="practice-questions.html">
+      <div class="related-guide-icon">✍️</div>
+      <div>
+        <div class="related-guide-label">Related Guide</div>
+        <div class="related-guide-title">Free Georgia Real Estate Practice Questions (20 with Answers)</div>
+      </div>
+      <div class="related-guide-arrow">→</div>
+    </a>
 
     <div class="prose">
       <div class="section-label">Keep Going</div>
