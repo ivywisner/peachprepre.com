@@ -389,6 +389,40 @@
     .tier-cta.pro-cta { background: #2563EB; color: #ffffff; }
     .tier-cta.premium-cta { background: #E8708C; color: #ffffff; }
 
+    /* ── Study guides strip ── */
+    .strip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+    .strip-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 16px 18px;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: transform 0.2s, border-color 0.15s, opacity 0.5s ease;
+    }
+    .strip-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .strip-card:hover { border-color: rgba(255,174,102,0.35); transform: translateY(-2px); }
+    .strip-icon { font-size: 22px; flex-shrink: 0; }
+    .strip-title { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.4; flex: 1; }
+    .strip-arrow { color: #FFAE66; font-size: 17px; flex-shrink: 0; }
+    .strip-browse {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFAE66;
+      text-decoration: none;
+    }
+    .strip-browse:hover { text-decoration: underline; }
+
     /* ── Cobb CTA section ── */
     .cobb-cta {
       text-align: center;
@@ -475,6 +509,9 @@
       .stats-bar { gap: 0; padding: 20px 16px; }
       .stat { padding: 0 12px; }
       .stat-value { font-size: 22px; }
+      /* Guide cards fly in from the left on mobile (desktop keeps the float-up) */
+      .strip-card { transform: translateX(-36px); }
+      .strip-card.visible { transform: translateX(0); }
     }
     @media (max-width: 400px) {
       .dl-free { display: none; }
@@ -871,6 +908,36 @@
     </div>
   </div>
 
+  <!-- Study Guides strip -->
+  <section id="study-guides">
+    <div class="section-label">Free Study Guides</div>
+    <h2>Know the Exam <span>Before You Sit It</span></h2>
+    <p>Straight answers to the questions every Georgia candidate asks — verified against the official PSI bulletin, not internet hearsay.</p>
+    <div class="strip-grid">
+      <a class="strip-card" href="vocab.html">
+        <span class="strip-icon">📖</span>
+        <span class="strip-title">50 Vocab Terms You Need to Know</span>
+        <span class="strip-arrow">→</span>
+      </a>
+      <a class="strip-card" href="exam-facts.html">
+        <span class="strip-icon">📋</span>
+        <span class="strip-title">How Many Questions Is the GA Exam?</span>
+        <span class="strip-arrow">→</span>
+      </a>
+      <a class="strip-card" href="cost.html">
+        <span class="strip-icon">💵</span>
+        <span class="strip-title">How Much Does a GA License Actually Cost?</span>
+        <span class="strip-arrow">→</span>
+      </a>
+      <a class="strip-card" href="practice-questions.html">
+        <span class="strip-icon">✍️</span>
+        <span class="strip-title">20 Free Practice Questions with Answers</span>
+        <span class="strip-arrow">→</span>
+      </a>
+    </div>
+    <a class="strip-browse" href="guides.html">Browse all study guides →</a>
+  </section>
+
   <!-- Cobb CTA -->
   <div class="cobb-cta">
     <img src="cobb-waving.png" alt="Cobb the corgi waving" />
@@ -910,6 +977,19 @@
       });
     }, { threshold: 0.1 });
     tierCards.forEach(card => tierObserver.observe(card));
+
+    // Study guide cards — staggered float in
+    const stripCards = document.querySelectorAll('.strip-card');
+    const stripObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(stripCards).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), index * 150);
+          stripObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    stripCards.forEach(card => stripObserver.observe(card));
   </script>
 
   <script>
