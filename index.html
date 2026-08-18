@@ -251,6 +251,94 @@
       line-height: 1.6;
     }
 
+    /* ── Reviews ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: transform 0.15s, border-color 0.15s, opacity 0.6s ease, transform 0.6s ease;
+    }
+    .review-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .review-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,174,102,0.35);
+    }
+    .review-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(255,174,102,0.08);
+      line-height: 1;
+      pointer-events: none;
+      font-family: Georgia, serif;
+    }
+    .review-stars {
+      font-size: 18px;
+      color: #FFAE66;
+      letter-spacing: 2px;
+    }
+    .review-headline {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.4;
+    }
+    .review-body {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8A3AAC, #FFAE66);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .review-passed {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4ADE80;
+      margin-top: 2px;
+    }
+
     /* ── FAQ ── */
     .faq-section { background: rgba(255,255,255,0.02); }
     .faq-section > div {
@@ -910,6 +998,55 @@
     </div>
   </section>
 
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="section-label">Student Results</div>
+    <h2>Real Students. <span>Real Results.</span></h2>
+    <p>From people who used PeachPrep RE to pass the Georgia real estate exam.</p>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-headline">"Passed on my First Try!"</div>
+        <div class="review-body">I saw a lot of people say this app helped, so I just downloaded it the week before my exam… and I was so happy that I did! The practice tests were the closest thing to what I actually saw on the exam. So I felt like it helped me study way better than some of the other tools I was using.</div>
+        <div class="review-author">
+          <div class="review-avatar">ZD</div>
+          <div>
+            <div class="review-name">Zoe D.</div>
+            <div class="review-passed">✓ Passed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-headline">"I'm SO Glad I Found This App"</div>
+        <div class="review-body">PeachPrep RE for me is one of the best study tools! I discovered this app after I failed my first exam attempt, and it helped SO much. The flashcards were great, and I loved that I was able to track my progress over time. Finally passed the exam! I wish I knew about this app when I was studying for the first time around.</div>
+        <div class="review-author">
+          <div class="review-avatar">EM</div>
+          <div>
+            <div class="review-name">Eduardo M.</div>
+            <div class="review-passed">✓ Passed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-headline">"The Closest Thing to the Actual Exam"</div>
+        <div class="review-body">I'm a single parent with a full-time job, and I really needed to pivot my career so I could take better care of my kid. I found YouTube videos to be helpful, but PeachPrep RE was the best for taking practice quizzes—especially when it came to the state portion of the exam. I dunno how I would've passed without it!</div>
+        <div class="review-author">
+          <div class="review-avatar">VJ</div>
+          <div>
+            <div class="review-name">Valentina J.</div>
+            <div class="review-passed">✓ Passed</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FAQ -->
   <div class="faq-section">
     <div id="faq">
@@ -1124,6 +1261,19 @@
   </footer>
 
   <script>
+    // Review cards — staggered float in
+    const reviewCards = document.querySelectorAll('.review-card');
+    const reviewObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Array.from(reviewCards).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), index * 150);
+          reviewObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reviewCards.forEach(card => reviewObserver.observe(card));
+
     // Pricing cards — staggered float in
     const tierCards = document.querySelectorAll('.tier-card');
     const tierObserver = new IntersectionObserver((entries) => {
