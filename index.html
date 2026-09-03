@@ -1317,7 +1317,8 @@
     // Rotation calendar: first entry whose end is in the future is the active
     // sale. Add the next sale as one more line — the bar handles changeovers
     // automatically and hides itself when the calendar runs dry.
-    // Timestamps are fixed UTC instants (below = 11:59:59 PM Pacific, PDT).
+    // Timestamps are fixed UTC instants = 11:59:59 PM Pacific. PDT entries end
+    // in 06:59:59Z; from Nov 1, 2026 (DST ends) PST entries end in 07:59:59Z.
     // Honest-clock rules: same deadline for every visitor, never resets on
     // refresh, bar disappears at zero. No fake urgency, no strikethrough prices.
     const SALES = [
@@ -1330,7 +1331,30 @@
       { name: '🎒 Back-to-School Sale', end: '2026-09-03T06:59:59Z' }, // ends Wed Sep 2, 11:59 PM PT
       { name: '🇺🇸 Labor Day Sale', end: '2026-09-08T06:59:59Z' }, // ends Mon Sep 7 (Labor Day), 11:59 PM PT
       { name: '🌅 Summer Sunset Sale', end: '2026-09-14T06:59:59Z' }, // ends Sun Sep 13, 11:59 PM PT
-      { name: '📚 Study Season Sale', end: '2026-09-19T06:59:59Z' }, // ends Fri Sep 18, 11:59 PM PT — LAST sale; bar self-removes after (price raise planned)
+      { name: '📚 Study Season Sale', end: '2026-09-19T06:59:59Z' }, // ends Fri Sep 18, 11:59 PM PT
+      { name: '🍂 First Day of Fall Sale', end: '2026-09-23T06:59:59Z' }, // ends Tue Sep 22 (autumn equinox), 11:59 PM PT
+      { name: '🏈 Football Season Sale', end: '2026-09-28T06:59:59Z' }, // ends Sun Sep 27, 11:59 PM PT
+      { name: '🍁 October Kickoff Sale', end: '2026-10-03T06:59:59Z' }, // ends Fri Oct 2, 11:59 PM PT
+      { name: '🌾 Harvest Sale', end: '2026-10-08T06:59:59Z' }, // ends Wed Oct 7, 11:59 PM PT
+      { name: '📖 Midterm Season Sale', end: '2026-10-13T06:59:59Z' }, // ends Mon Oct 12, 11:59 PM PT
+      { name: '🦇 Spooky Season Sale', end: '2026-10-18T06:59:59Z' }, // ends Sat Oct 17, 11:59 PM PT
+      { name: '🕸️ Haunted House Sale', end: '2026-10-23T06:59:59Z' }, // ends Thu Oct 22, 11:59 PM PT
+      { name: '🍬 Trick-or-Treat Sale', end: '2026-10-28T06:59:59Z' }, // ends Tue Oct 27, 11:59 PM PT
+      { name: '🎃 Halloween Sale', end: '2026-11-01T06:59:59Z' }, // ends Sat Oct 31 (Halloween), 11:59 PM PT — last PDT entry
+      { name: '🕰️ Fall Back Sale', end: '2026-11-06T07:59:59Z' }, // ends Thu Nov 5, 11:59 PM PT (PST from here on)
+      { name: '🇺🇸 Veterans Day Sale', end: '2026-11-12T07:59:59Z' }, // ends Wed Nov 11 (Veterans Day), 11:59 PM PT
+      { name: '🧣 Cozy Season Sale', end: '2026-11-17T07:59:59Z' }, // ends Mon Nov 16, 11:59 PM PT
+      { name: '🥧 Pie Season Sale', end: '2026-11-22T07:59:59Z' }, // ends Sat Nov 21, 11:59 PM PT
+      { name: '🦃 Thanksgiving Sale', end: '2026-11-27T07:59:59Z' }, // ends Thu Nov 26 (Thanksgiving), 11:59 PM PT
+      { name: '🛍️ Black Friday Sale', end: '2026-11-28T07:59:59Z' }, // ends Fri Nov 27 (Black Friday), 11:59 PM PT — one-day sale
+      { name: '💻 Cyber Monday Sale', end: '2026-12-01T07:59:59Z' }, // ends Mon Nov 30 (Cyber Monday), 11:59 PM PT
+      { name: '❄️ December Kickoff Sale', end: '2026-12-06T07:59:59Z' }, // ends Sat Dec 5, 11:59 PM PT
+      { name: '🎓 Finals Season Sale', end: '2026-12-11T07:59:59Z' }, // ends Thu Dec 10, 11:59 PM PT
+      { name: '🎁 Gift Yourself Sale', end: '2026-12-16T07:59:59Z' }, // ends Tue Dec 15, 11:59 PM PT
+      { name: '⛄ First Day of Winter Sale', end: '2026-12-22T07:59:59Z' }, // ends Mon Dec 21 (winter solstice), 11:59 PM PT
+      { name: '🎄 Christmas Sale', end: '2026-12-26T07:59:59Z' }, // ends Fri Dec 25 (Christmas), 11:59 PM PT
+      { name: '⏳ Year-End Sale', end: '2026-12-31T07:59:59Z' }, // ends Wed Dec 30, 11:59 PM PT
+      { name: '🥂 New Year, New Career Sale', end: '2027-01-05T07:59:59Z' }, // ends Mon Jan 4, 11:59 PM PT — LAST sale; bar self-removes after
     ];
 
     (function () {
