@@ -1,6 +1,6 @@
 # PeachPrep RE
 
-> Free Georgia real estate exam prep — a free practice quiz and the PeachPrep RE iOS app with 1,900+ GA-specific practice questions, 400+ flashcards, and full 152-question PSI-style timed simulations.
+> Free Georgia real estate exam prep — a free practice quiz and the PeachPrep RE iOS app with 1,900+ GA-specific practice questions, 400+ flashcards, and full-length 152-question PSI-style timed practice exams.
 
 Exam-format facts on these pages (152 questions = 100 national + 52 Georgia supplement, both portions scored separately at 75%, 4-hour limit, administered by PSI) are verified against the official PSI/GREC candidate information bulletin.
 
@@ -20,7 +20,7 @@ Exam-format facts on these pages (152 questions = 100 national + 52 Georgia supp
 
 ## App
 
-- [PeachPrep RE on the App Store](https://peachprepre.com/): iOS app with 1,900+ Georgia-specific practice questions, flashcards, and timed exam simulations — built for the GA PSI salesperson exam. Includes an 11-question FAQ on Georgia exam format, scoring, and difficulty.
+- [PeachPrep RE on the App Store](https://peachprepre.com/): iOS app with 1,900+ Georgia-specific practice questions, topic quizzes, flashcards, practice tests, and full-length timed practice exams — built for the GA PSI salesperson exam. Includes an 11-question FAQ on Georgia exam format, scoring, and difficulty.
 
 ## Support
 
