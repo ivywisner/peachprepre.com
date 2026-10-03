@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Georgia Real Estate Exam Math: The Formulas That Actually Show Up — PeachPrep RE</title>
+  <meta name="description" content="Yes, there's math on the Georgia real estate exam — Real Estate Calculations is 7% of the national portion, and the Georgia supplement hides more in its Finance & Closing questions. Every tested formula: commissions, prorations, Georgia's transfer tax, the intangible recording tax, the 40% assessment ratio, mills, LTV, cap rates — with worked examples." />
+  <meta property="og:title" content="Georgia Real Estate Exam Math: The Formulas That Actually Show Up" />
+  <meta property="og:description" content="Calculations are 7% of the national portion — and Georgia sneaks more math into the state supplement: the transfer tax, the intangible recording tax, and the 40% assessment ratio. Every formula, worked out." />
+  <meta property="og:image" content="https://peachprepre.com/icon.png" />
+  <meta property="og:url" content="https://peachprepre.com/math.html" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="icon.png" />
+  <link rel="canonical" href="https://peachprepre.com/math.html" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GEHERQJXJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6GEHERQJXJ');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0F0C29;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-icon { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-name { font-size: 18px; font-weight: 800; color: #ffffff; }
+    .nav-name span { color: #FFAE66; }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .nav-download {
+      background: #FFAE66 !important;
+      color: #1A1A2E !important;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700 !important;
+    }
+    .nav-download:hover { background: #F09A4E !important; }
+
+    /* ── Article Hero ── */
+    .article-hero {
+      background: linear-gradient(135deg, #2A1060, #8A3AAC, #E8708C, #FFAE66);
+      padding: 72px 32px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15,12,41,0.35);
+    }
+    .article-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .article-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFAE66;
+      background: rgba(255,174,102,0.12);
+      border: 1px solid rgba(255,174,102,0.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .article-hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .article-hero h1 span { color: #FFD166; }
+    .article-hero-sub {
+      font-size: clamp(16px, 2.5vw, 19px);
+      color: rgba(255,255,255,0.80);
+      line-height: 1.65;
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.40);
+    }
+
+    /* ── Stat callouts ── */
+    .stat-callout {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 32px;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .big-stat {
+      text-align: center;
+      flex: 1;
+      max-width: 240px;
+      padding: 0 28px;
+      border-right: 1px solid rgba(255,255,255,0.10);
+    }
+    .big-stat:last-child { border-right: none; }
+    .big-stat-value {
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 900;
+      color: #FFAE66;
+      line-height: 1;
+    }
+    .big-stat-value.danger { color: #F87171; }
+    .big-stat-value.gold { color: #FFD166; }
+    .big-stat-value.good { color: #4ADE80; }
+    .big-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.50);
+      margin-top: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* ── Article body ── */
+    .article-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+
+    /* ── Prose ── */
+    .prose h2 {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-top: 64px;
+      margin-bottom: 16px;
+    }
+    .prose h2 span { color: #E8708C; }
+    .prose h2:first-child { margin-top: 0; }
+    .prose p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.80;
+      margin-bottom: 18px;
+    }
+    .prose p strong { color: #ffffff; font-weight: 700; }
+    .prose a { color: #FFAE66; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FFAE66;
+      margin-bottom: 10px;
+      margin-top: 48px;
+    }
+    .section-label:first-child { margin-top: 0; }
+    .section-label + h2 { margin-top: 0; }
+
+    /* ── Calculator note ── */
+    .calculator-note {
+      background: rgba(96,165,250,0.07);
+      border: 1px solid rgba(96,165,250,0.20);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 40px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .calculator-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .calculator-text h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .calculator-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── Formula card ── */
+    .math-section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 32px;
+      margin: 32px 0;
+    }
+    .math-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .math-icon {
+      font-size: 28px;
+      width: 52px;
+      height: 52px;
+      background: rgba(255,174,102,0.10);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .math-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .math-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .formula-box {
+      background: rgba(255,174,102,0.08);
+      border: 1px solid rgba(255,174,102,0.22);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 15px;
+      color: #FFAE66;
+      line-height: 1.7;
+    }
+    .example-box {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid rgba(255,174,102,0.50);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    .example-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 10px;
+    }
+    .example-line {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.75;
+    }
+    .example-line strong { color: #ffffff; }
+    .example-line .result {
+      color: #FFAE66;
+      font-weight: 800;
+    }
+    .math-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .math-note strong { color: rgba(255,255,255,0.65); }
+
+    /* ── Skip section ── */
+    .skip-section {
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.18);
+      border-radius: 20px;
+      padding: 32px;
+      margin: 48px 0;
+    }
+    .skip-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: #4ADE80;
+      margin-bottom: 16px;
+    }
+    .skip-list { list-style: none; }
+    .skip-list li {
+      font-size: 15px;
+      color: rgba(255,255,255,0.70);
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+    .skip-list li:last-child { border-bottom: none; }
+    .skip-check { color: #4ADE80; font-weight: 800; flex-shrink: 0; }
+
+    .source-note {
+      font-size: 12px !important;
+      color: rgba(255,255,255,0.28) !important;
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+    }
+    .source-note a { color: rgba(255,255,255,0.40) !important; }
+
+    /* ── Related guide ── */
+    .related-guide {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .related-guide:hover { border-color: rgba(255,174,102,0.35); }
+    .related-guide-icon { font-size: 24px; flex-shrink: 0; }
+    .related-guide-label {
+      font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.30); margin-bottom: 4px;
+    }
+    .related-guide-title { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.80); }
+    .related-guide-arrow { margin-left: auto; font-size: 18px; color: #FFAE66; flex-shrink: 0; }
+
+    /* ── CTA section ── */
+    .cobb-cta {
+      text-align: center;
+      padding: 80px 32px;
+      background: linear-gradient(135deg, #2A1060, #8A3AAC, #E8708C, #FFAE66);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .cobb-cta img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));
+      border-radius: 50%;
+      background: rgba(255,255,255,0.90);
+      padding: 5px;
+    }
+    .cobb-cta h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .cobb-cta p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.70);
+      margin-bottom: 32px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFAE66;
+      color: #1A1A2E;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(255,174,102,0.4);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,174,102,0.5); }
+    .cobb-cta .hero-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 32px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.80); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      .nav-links a:not(.nav-download) { display: none; }
+      .stat-callout { flex-wrap: wrap; padding: 28px 20px; gap: 20px; }
+      .big-stat { border-right: none; max-width: 100%; padding: 0; }
+      .article-body { padding: 40px 20px 60px; }
+      .math-section { padding: 22px 18px; }
+      .skip-section { padding: 22px 18px; }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Georgia Real Estate Exam Math: The Formulas That Actually Show Up",
+  "description": "Real Estate Calculations is 7% of the national portion of the Georgia salesperson exam, and the Georgia supplement's Finance & Closing questions add more math: the transfer tax ($1.00 for the first $1,000 plus $0.10 per additional $100), the intangible recording tax ($1.50 per $500 of a long-term note), and Georgia's 40% assessment ratio. Every tested formula with worked examples.",
+  "url": "https://peachprepre.com/math.html",
+  "dateModified": "2026-10-03",
+  "author": {
+    "@type": "Person",
+    "name": "Ivy Wisner"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PeachPrep RE",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://peachprepre.com/icon.png"
+    }
+  },
+  "mainEntityOfPage": "https://peachprepre.com/math.html"
+}
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">
+      <img class="nav-icon" src="icon.png" alt="PeachPrep RE" />
+      <span class="nav-name">PeachPrep <span>RE</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="quiz.html">Free Quiz</a>
+      <a href="guides.html">Study Guides</a>
+      <a href="support.html">Support</a>
+      <a href="https://apps.apple.com/us/app/peachprep-re/id6794880935" class="nav-download">Download Free ↓</a>
+    </div>
+  </nav>
+
+  <!-- Article Hero -->
+  <div class="article-hero">
+    <div class="article-hero-content">
+      <div class="article-eyebrow">Math · Both Portions Have It</div>
+      <h1>Georgia Real Estate Exam Math: <span>The Formulas That Actually Show Up</span></h1>
+      <p class="article-hero-sub">Calculations are an official 7% of the national portion — and Georgia quietly hides more math in the state supplement's closing questions. The good news: it's the most predictable material on the whole exam. Learn a short list of formulas and those points are yours before you sit down.</p>
+      <div class="hero-meta">Georgia GREC · PSI Salesperson Exam · Updated October 2026</div>
+    </div>
+  </div>
+
+  <!-- Stat Bar -->
+  <div class="stat-callout">
+    <div class="big-stat">
+      <div class="big-stat-value danger">7%</div>
+      <div class="big-stat-label">Of the national portion is Real Estate Calculations</div>
+    </div>
+    <div class="big-stat">
+      <div class="big-stat-value gold">75%</div>
+      <div class="big-stat-label">Needed on each portion — math can't be skipped</div>
+    </div>
+    <div class="big-stat">
+      <div class="big-stat-value good">Provided</div>
+      <div class="big-stat-label">On-screen calculator at the PSI test center</div>
+    </div>
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-body">
+    <div class="prose">
+
+      <div class="section-label">The Short Answer</div>
+      <h2>Is There Math on the <span>Georgia Real Estate Exam?</span></h2>
+
+      <p>Yes — in both halves. On the national portion, <strong>Real Estate Calculations is its own content area worth 7%</strong> of your 100 scored questions, and math also sneaks into the financing and valuation areas. Then the <strong>52-question Georgia supplement</strong> brings its own: the Finance &amp; Closing block (15 of those 52 questions) is where Georgia's transfer tax, intangible recording tax, prorations, and the 40% assessment ratio live. With <strong>75% required on each portion separately</strong>, writing off the math on either side spends margin you'll want later.</p>
+
+      <p>Here's the good news: real estate exam math is shallow. No algebra beyond solving for one missing piece, no calculus, nothing you didn't see by ninth grade. The same short list of formulas appears over and over — every one of them is below, with a worked example.</p>
+
+      <div class="calculator-note">
+        <div class="calculator-icon">🧮</div>
+        <div class="calculator-text">
+          <h3>You don't bring a calculator — PSI hands you one</h3>
+          <p>An <strong>on-screen calculator is provided at the test center</strong>, built into the exam software. It's a basic calculator, not a financial one — which is fine, because nothing on the exam needs more than add, subtract, multiply, divide. Practice accordingly: if your study routine leans on a fancy financial calculator's special keys, you're practicing with a tool you won't have. (Details live in PSI's Georgia Candidate Information Bulletin.)</p>
+        </div>
+      </div>
+
+      <div class="section-label">The Formulas</div>
+      <h2>The <span>Money Math</span></h2>
+
+      <!-- Commission -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">💰</div>
+          <div>
+            <div class="math-title">Sales Commissions</div>
+            <div class="math-subtitle">The most reliably tested calculation on the exam</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Total commission = Sale price × Commission rate<br />
+          Each split = Previous amount × Split percentage
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A home sells for <strong>$320,000</strong> at a <strong>6% commission</strong>.</div>
+          <div class="example-line">Total commission = $320,000 × 0.06 = <span class="result">$19,200</span></div>
+          <div class="example-line">Split 50/50 between the listing and selling brokers:</div>
+          <div class="example-line">Each brokerage = $19,200 ÷ 2 = <span class="result">$9,600</span></div>
+          <div class="example-line">The salesperson is on a 70/30 split with their broker:</div>
+          <div class="example-line">Salesperson's share = $9,600 × 0.70 = <span class="result">$6,720</span></div>
+        </div>
+        <div class="math-note">The exam runs this in every direction — sometimes you're handed the salesperson's check and asked to work backwards to the sale price. Same formula, solved for a different piece. Practice both directions.</div>
+      </div>
+
+      <!-- Profit / Loss -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📈</div>
+          <div>
+            <div class="math-title">Percent of Profit or Loss</div>
+            <div class="math-subtitle">Profit over original cost — always</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Percent of profit = Profit ÷ Original cost<br />
+          (Loss works the same way: Loss ÷ Original cost)
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">An investor buys a lot for <strong>$200,000</strong> and sells it for <strong>$230,000</strong>.</div>
+          <div class="example-line">Profit = $230,000 − $200,000 = <strong>$30,000</strong></div>
+          <div class="example-line">Percent of profit = $30,000 ÷ $200,000 = <span class="result">15%</span></div>
+        </div>
+        <div class="math-note"><strong>The classic trap:</strong> dividing by the sale price instead of the original cost. Percent of profit is always measured against what was <strong>paid</strong>, not what it sold for — and the wrong-divisor answer is always sitting right there among the choices.</div>
+      </div>
+
+      <div class="section-label">The Georgia-Only Math</div>
+      <h2>Transfer Tax &amp; the <span>Intangible Recording Tax</span></h2>
+
+      <p>This is the math national prep courses skip entirely — and it lives on the Georgia supplement, where you need your 75% with only 52 questions of room. Two taxes, two different bases: the <strong>transfer tax</strong> is on the deed (the sale), and the <strong>intangible recording tax</strong> is on the note (the borrowing).</p>
+
+      <!-- GA transfer tax + intangible -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">🏛️</div>
+          <div>
+            <div class="math-title">Georgia Transfer Tax &amp; Intangible Recording Tax</div>
+            <div class="math-subtitle">The most Georgia-specific math on the exam</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Transfer tax = $1.00 for the first $1,000 of consideration<br />
+          &nbsp;&nbsp;+ $0.10 per additional $100 (or fraction)<br />
+          Intangible tax = (Loan amount ÷ 500) × $1.50, on long-term notes
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A home sells for <strong>$300,000</strong> with a new <strong>$240,000</strong> mortgage.</div>
+          <div class="example-line">Transfer tax = $1.00 + ($299,000 ÷ 100) × $0.10 = $1.00 + $299 = <span class="result">$300</span></div>
+          <div class="example-line">Intangible tax = ($240,000 ÷ 500) × $1.50 = 480 × $1.50 = <span class="result">$720</span></div>
+        </div>
+        <div class="math-note"><strong>The shortcut the formula hides:</strong> the transfer tax works out to $1 per $1,000 of price — $300,000 sale, $300 tax. Know the official first-$1,000-plus-$0.10-per-$100 phrasing, but check your answer with the shortcut. And know who customarily pays: the <strong>seller pays the transfer tax</strong>, the <strong>borrower pays the intangible tax</strong>. The intangible tax applies to <strong>long-term notes</strong> — a standard home mortgage qualifies — and both taxes round any fraction <strong>up</strong> to the next increment.</div>
+      </div>
+
+      <!-- Property tax / 40% -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">🏠</div>
+          <div>
+            <div class="math-title">Property Taxes: The 40% Rule &amp; Mills</div>
+            <div class="math-subtitle">Georgia's signature twist — assess at 40% before anything else</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Assessed value = Fair market value × 40%<br />
+          Taxable value = Assessed value − Exemptions<br />
+          Annual tax = Taxable value × (Mills ÷ 1,000)
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A home has a fair market value of <strong>$250,000</strong>, a <strong>$2,000 homestead exemption</strong>, and a millage rate of <strong>30 mills</strong>.</div>
+          <div class="example-line">Assessed value = $250,000 × 0.40 = <strong>$100,000</strong></div>
+          <div class="example-line">Taxable value = $100,000 − $2,000 = <strong>$98,000</strong></div>
+          <div class="example-line">Annual tax = $98,000 × 0.030 = <span class="result">$2,940</span></div>
+        </div>
+        <div class="math-note">The 40% assessment ratio comes from the <strong>Georgia Constitution</strong>, and it's the step the exam loves to watch you skip — a distractor computed straight off fair market value is nearly always waiting in the choices. The standard state homestead exemption is <strong>$2,000 off assessed value</strong> for an owner-occupied home; questions will hand you the exemption to use. One mill = $1 of tax per $1,000 of taxable value.</div>
+      </div>
+
+      <div class="section-label">Closing Table Math</div>
+      <h2>Prorations at <span>The Closing</span></h2>
+
+      <!-- Prorations -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📅</div>
+          <div>
+            <div class="math-title">Prorations</div>
+            <div class="math-subtitle">Splitting taxes, rent, or interest between buyer and seller</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Daily rate = Annual amount ÷ Number of days in the year<br />
+          Share owed = Daily rate × Days of ownership
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example (365-day method)</div>
+          <div class="example-line">Annual property taxes are <strong>$2,920</strong>. Closing is <strong>May 20</strong>, and the question makes the seller responsible through the day before closing.</div>
+          <div class="example-line">Daily rate = $2,920 ÷ 365 = <strong>$8/day</strong></div>
+          <div class="example-line">Seller's days: Jan 1 – May 19 = 120 + 19 = <strong>139 days</strong></div>
+          <div class="example-line">Seller's share = 139 × $8 = <span class="result">$1,112 — debit seller, credit buyer</span></div>
+        </div>
+        <div class="math-note">Georgia property taxes are paid <strong>in arrears</strong> — the seller has been living in the house all year without paying yet, which is why the buyer gets the credit. Questions specify the calendar method (<strong>365-day</strong> or <strong>360-day</strong>) and who owns closing day — follow whatever the question says, and the arithmetic is the easy part.</div>
+      </div>
+
+      <div class="section-label">Tax &amp; Mortgage Math</div>
+      <h2>LTV &amp; <span>Interest</span></h2>
+
+      <!-- LTV + interest -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">🏦</div>
+          <div>
+            <div class="math-title">Loan-to-Value &amp; Simple Interest</div>
+            <div class="math-subtitle">The two mortgage calculations the exam actually asks</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          LTV = Loan amount ÷ Property value<br />
+          Annual interest = Loan balance × Interest rate<br />
+          Monthly interest = Annual interest ÷ 12
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A buyer purchases a <strong>$250,000</strong> home with <strong>$50,000 down</strong>, borrowing the rest at <strong>6%</strong>.</div>
+          <div class="example-line">Loan = $250,000 − $50,000 = <strong>$200,000</strong></div>
+          <div class="example-line">LTV = $200,000 ÷ $250,000 = <span class="result">80%</span></div>
+          <div class="example-line">Annual interest = $200,000 × 0.06 = <strong>$12,000</strong></div>
+          <div class="example-line">First month's interest = $12,000 ÷ 12 = <span class="result">$1,000</span></div>
+        </div>
+        <div class="math-note">Interest questions on the exam use the <strong>current loan balance</strong>, not the original purchase price. And remember the down payment and LTV are two halves of the same whole — 20% down means 80% LTV, every time.</div>
+      </div>
+
+      <div class="section-label">Investor Math</div>
+      <h2>Cap Rates &amp; <span>Property Value</span></h2>
+
+      <!-- Income approach -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📊</div>
+          <div>
+            <div class="math-title">Income Approach — IRV</div>
+            <div class="math-subtitle">Income ÷ Rate = Value. Cover the one you need.</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Value = NOI ÷ Cap rate<br />
+          Cap rate = NOI ÷ Value<br />
+          NOI = Value × Cap rate
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A fourplex produces a net operating income of <strong>$30,000/year</strong>. Similar properties sell at a <strong>7.5% cap rate</strong>.</div>
+          <div class="example-line">Value = $30,000 ÷ 0.075 = <span class="result">$400,000</span></div>
+        </div>
+        <div class="math-note">NOI means income <strong>after</strong> operating expenses but <strong>before</strong> mortgage payments — if a question hands you gross income and expenses, subtract first. Debt service never belongs in NOI.</div>
+      </div>
+
+      <!-- Area -->
+      <div class="math-section">
+        <div class="math-section-header">
+          <div class="math-icon">📐</div>
+          <div>
+            <div class="math-title">Area &amp; Acreage</div>
+            <div class="math-subtitle">One number to memorize cold: 43,560</div>
+          </div>
+        </div>
+        <div class="formula-box">
+          Area = Length × Width<br />
+          1 acre = 43,560 square feet<br />
+          Acres = Square feet ÷ 43,560
+        </div>
+        <div class="example-box">
+          <div class="example-label">Worked Example</div>
+          <div class="example-line">A rectangular lot measures <strong>180 ft × 242 ft</strong>.</div>
+          <div class="example-line">Area = 180 × 242 = <strong>43,560 sq ft</strong></div>
+          <div class="example-line">In acres: 43,560 ÷ 43,560 = <span class="result">exactly 1 acre</span></div>
+        </div>
+        <div class="math-note">If a price is quoted per square foot or per acre, convert to the matching unit <strong>before</strong> multiplying. That single step is where most area questions are lost.</div>
+      </div>
+
+      <!-- Skip section -->
+      <div class="skip-section">
+        <div class="skip-title">✓ What You Can Stop Worrying About</div>
+        <ul class="skip-list">
+          <li><span class="skip-check">✓</span> Building amortization schedules by hand — never asked</li>
+          <li><span class="skip-check">✓</span> Algebra beyond solving for one unknown in a formula you already know</li>
+          <li><span class="skip-check">✓</span> Memorizing closing statement line numbers — know debits vs. credits conceptually instead</li>
+          <li><span class="skip-check">✓</span> Financial-calculator keystrokes — PSI's basic on-screen calculator is all you get and all you need</li>
+        </ul>
+      </div>
+
+      <div class="section-label">Strategy</div>
+      <h2>How to <span>Study the Math</span></h2>
+
+      <p>Almost every formula above is the same shape: <strong>Part = Total × Rate</strong>. Commission is price × rate. Interest is balance × rate. Transfer tax is consideration × rate. Property tax is value × rate — after Georgia's 40% assessment step. Once that clicks, you're not memorizing ten formulas — you're memorizing one shape, a handful of Georgia-specific rates, and the one step (assess at 40% first) that Georgia grafts onto the front.</p>
+
+      <p>Then drill in both directions. The exam's favorite move is handing you the answer and asking for an ingredient: here's the commission check, what was the sale price? Here's the tax bill, what's the millage? If you can only run a formula forward, you only know half of it.</p>
+
+      <p>And keep running math sets right up through exam eve — these are the most predictable, mechanical points on the test, and a few practice sets convert directly into guaranteed score on both portions.</p>
+
+      <a class="related-guide" href="exam-facts.html">
+        <div class="related-guide-icon">📋</div>
+        <div>
+          <div class="related-guide-label">Related Guide</div>
+          <div class="related-guide-title">How Many Questions Are on the Georgia Real Estate Exam? Format &amp; Passing Score</div>
+        </div>
+        <div class="related-guide-arrow">→</div>
+      </a>
+
+      <a class="related-guide" href="practice-questions.html">
+        <div class="related-guide-icon">✍️</div>
+        <div>
+          <div class="related-guide-label">Related Guide</div>
+          <div class="related-guide-title">Free Georgia Real Estate Practice Questions (20 with Answers)</div>
+        </div>
+        <div class="related-guide-arrow">→</div>
+      </a>
+
+      <p class="source-note">Content weights verified against PSI's official Georgia Candidate Information Bulletin (Real Estate Calculations 7% of the national portion; Finance &amp; Closing 15 of the 52 supplement questions; on-screen calculator provided). Georgia tax formulas — the transfer tax, intangible recording tax, and 40% assessment ratio — follow Georgia law as tested on the salesperson exam.</p>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cobb-cta">
+    <img src="icon.png" alt="PeachPrep RE — Cobb the Corgi" />
+    <h2>Make the Math Automatic 🍑</h2>
+    <p>1,900+ Georgia-specific practice questions — including every math type on this page, with step-by-step solutions in every explanation.</p>
+    <a class="btn-primary" href="https://apps.apple.com/us/app/peachprep-re/id6794880935" target="_blank">
+      ⬇ Download PeachPrep RE — Free
+    </a>
+    <p class="hero-note">Free to start · No credit card required · iOS</p>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="quiz.html">Free Quiz</a>
+      <a href="guides.html">Study Guides</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://apps.apple.com/us/app/peachprep-re/id6794880935" target="_blank">App Store</a>
+    </div>
+    <div class="footer-copy">© 2026 Ivy Wisner · PeachPrep RE · Georgia Real Estate Exam Prep</div>
+  </footer>
+
+</body>
+</html>
